@@ -1,0 +1,41 @@
+{
+    "$schema": "https://raw.githubusercontent.com/F5Networks/f5-appsvcs-extension/main/schema/${as3-version}/as3-schema.json",    
+    "class": "AS3",
+    "action": "deploy",
+    "persist": true,
+    "declaration": {
+        "class": "ADC",
+        "schemaVersion": "3.0.0",
+        "id": "forwardProxy",
+        "forwardProxy": {
+            "class": "Tenant",
+            "forwardProxy": {
+                "class": "Application",
+                "explicitProxy-as3": {
+                    "class": "Service_HTTP",
+                    "virtualAddresses": [
+                        "0.0.0.0/0"
+                    ],
+                    "virtualPort": 3128,
+                    "layer4": "tcp",
+                    "profileTCP": "normal",
+                    "profileHTTP": {
+                        "use": "http-profile-forward-proxy"
+                    }
+                },
+                "http-profile-forward-proxy": {
+                    "class": "HTTP_Profile",
+                    "proxyType": "explicit",
+                    "connectErrorMessage": "<html><head><title>CONNECT ERROR</title></head></html>",
+                    "dnsErrorMessage": "<html><head><title>DNS ERROR</title></head></html>",
+                    "badRequestMessage": "<html><head><title>BAD REQUEST MESSAGE</title></head></html>",
+                    "badResponseMessage": "<html><head><title>BAD RESPONSE MESSAGE</title></head></html>",
+                    "resolver": {
+                        "bigip": "/Common/myResolver"
+                    },
+                    "defaultConnectAction": "allow"
+                }
+            }
+        }
+    }
+}

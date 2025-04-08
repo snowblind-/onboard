@@ -1,0 +1,28 @@
+{
+    "schemaVersion": "1.0.0",
+    "class": "Device",
+    "async": false,
+    "Common": {
+        "class": "Tenant",
+        "myResolver": {
+            "class": "DNS_Resolver",
+            "answerDefaultZones": false,
+            "cacheSize": 5767168,
+            "randomizeQueryNameCase": true,
+            "routeDomain": "0",
+            "forwardZones": [
+                {
+                    "name": "forward.net",
+                    "nameservers": [
+                        "1.1.1.1:53",
+                        "8.8.8.8:53"
+                    ]
+                }
+            ],
+            "useIpv4": true,
+            "useIpv6": true,
+            "useTcp": true,
+            "useUdp": true
+        }
+    }
+}
