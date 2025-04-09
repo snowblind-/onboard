@@ -23,6 +23,17 @@
             "useIpv6": true,
             "useTcp": true,
             "useUdp": true
+        },
+        "myLicense": {
+            "class": "License",
+            "licenseType": "regKey",
+            "regKey": "HEHSJ-GEHIO-MEGIR-HWEFV-QMEDWNC"
+        },
+        "admin": {
+            "class": "User",
+            "userType": "regular",
+            "password": "abc123!@#",
+            "shell": "bash"
         }
     }
 }
