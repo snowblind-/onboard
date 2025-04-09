@@ -28,23 +28,6 @@
             "class": "License",
             "licenseType": "regKey",
             "regKey": "HEHSJ-GEHIO-MEGIR-HWEFV-QMEDWNC"
-        },
-        "admin": {
-            "class": "User",
-            "userType": "regular",
-            "password": "abc123!@#",
-            "shell": "bash"
-        },
-        "anotherUser": {
-            "class": "User",
-            "userType": "regular",
-            "password": "myPass1word",
-            "shell": "bash",
-            "partitionAccess": {
-                "all-partitions": {
-                    "role": "admin"
-                }
-            }
         }
     }
 }
